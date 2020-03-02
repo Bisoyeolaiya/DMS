@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Document Record Update {{object.document_title}}</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" action="{% url 'docRecords:entry-detail' slug=object.slug %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

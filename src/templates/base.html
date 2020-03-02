@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}" />
+    <title>DMS</title>
+  </head>
+  <body>
+    <div class="content container">
+      <div class="nav-bar">
+        {% block navbar %} 
+          {% include 'navbar.html' %}
+        {% endblock %}
+      </div>
+      <br />
+      <h3>DOCUMENT MANAGEMENT SYSTEM</h3>
+      <hr />
+      <div>
+        {% block content %} 
+        {% endblock %}
+      </div>
+
+      <!-- Footer -->
+      <footer class="page-footer font-small blue">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+          © 2020 BisoyeFemi:
+          <a href="https://github.com/Bisoyeolaiya?tab=repositories">
+            My github account profile
+          </a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+
+    {% block jscode %} {% endblock%}
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+  </body>
+</html>
+

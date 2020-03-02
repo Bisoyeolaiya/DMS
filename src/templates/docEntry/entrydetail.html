@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Document Details</h5>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+        <dt class="col-sm-3">Document Title</dt>
+        <dd class="col-sm-9">{{ object.document_title }}</dd>
+      <dt class="col-sm-3">Date Created</dt>
+      <dd class="col-sm-9">{{ object.created_on }}</dd>
+      <dt class="col-sm-3">Entry Class</dt>
+      <dd class="col-sm-9">{{ object.entry_class }}</dd>
+      <dt class="col-sm-3">Document Type</dt>
+      <dd class="col-sm-9">{{ object.document_type }}</dd>
+      <dt class="col-sm-3">Document Source</dt>
+      <dd class="col-sm-9">{{ object.doc_source }}</dd>
+      <dt class="col-sm-3">Sender Name: Designation</dt>
+      <dd class="col-sm-9">{{ object.doc_sender }}</dd>
+      <dt class="col-sm-3">Document Destination</dt>
+      <dd class="col-sm-9">{{ object.doc_destination }}</dd>
+      <dt class="col-sm-3">Receiver Name: Designation</dt>
+      <dd class="col-sm-9">{{ object.doc_receiver }}</dd>
+      <dt class="col-sm-3">Date Received</dt>
+      <dd class="col-sm-9">{{ object.received_on }}</dd>
+      <dt class="col-sm-3">Comment</dt>
+      <dd class="col-sm-6">{{ object.comment }}</dd>
+    </dl>
+    <div>
+      <a href="{% url 'docRecords:update-entry' slug=object.slug %}"><button class="btn btn-success">Update Record</button></a>&nbsp;
+      <a href="{% url 'docRecords:delete-entry' slug=object.slug %}"><button class="btn btn-danger">Delete Record</button></a>
+    </div>
+
+    </div>
+</div>
+
+{% endblock %}
